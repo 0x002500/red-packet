@@ -3,11 +3,13 @@
 </script>
 
 <template>
-  <button><img class="red-packet" src="../../public/red-packet.png" alt="The picture for an red packet" /></button>
+  <button class="main-button"><img src="/red-packet.png" alt="The picture for an red packet" /></button>
 </template>
 
 <style>
-  .red-packet {
-    width: 250px;
+  .main-button {
+    position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0);
   }
 </style>
