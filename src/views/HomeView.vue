@@ -10,8 +10,8 @@ export default {
     }
   },
   methods: {
-    cli(event) {
-      count++;
+    onclick() {
+      this.count++
     }
   }
 }
@@ -19,7 +19,7 @@ export default {
 
 <template>
   <h1 class="title">现在你已获得{{ count }}元</h1>
-  <button @click="cli" class="main-button"><img src="/red-packet.png" alt="The picture for an red packet" /></button>
+  <button @click="onclick" class="main-button"><img src="/red-packet.png" alt="The picture for an red packet" /></button>
 </template>
 
 <style>
