@@ -11,7 +11,8 @@ export default {
   },
   methods: {
     onclick() {
-      this.count++
+      var now_num = (Math.random() * 2).toFixed(2);
+      this.count += now_num;
     }
   }
 }
