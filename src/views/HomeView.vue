@@ -8,13 +8,18 @@ export default {
     return {
       count: 0
     }
+  },
+  methods: {
+    cli(event) {
+      count++;
+    }
   }
 }
 </script>
 
 <template>
-  <p class="title">现在你以获得{{ count }}元</p>
-  <button @click="count++" class="main-button"><img src="/red-packet.png" alt="The picture for an red packet" /></button>
+  <h1 class="title">现在你以获得{{ count }}元</h1>
+  <button @click="cli" class="main-button"><img src="/red-packet.png" alt="The picture for an red packet" /></button>
 </template>
 
 <style>
@@ -25,6 +30,7 @@ export default {
   background-image: url(/red-packet.png);
   background-size: cover;
 }
+
 .title {
   position: absolute;
   left: 50%;
