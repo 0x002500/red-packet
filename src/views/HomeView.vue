@@ -2,16 +2,7 @@
 
 </script>
 
-<script lang="ts">
-//check the random type
-const isInteger = (obj: unknown) => {
-  return typeof obj === 'number' && obj % 1 === 0;
-};
-//change the type
-const keeptwo = (num: number) => {
-  return Number(num.toString().match(/^\d+(?:\.\d{0,2})?/));
-};
-
+<script>
 export default {
   data() {
     return {
@@ -19,16 +10,16 @@ export default {
     }
   },
   methods: {
+    //add money to the total money when user click
     onclick() {
-      if (isInteger(Math.random()) == false) this.count += keeptwo(Math.random() + 1)
-      else this.count += Math.random();
+      this.count += Math.random() + 1;
     }
   }
 }
 </script>
 
 <template>
-  <h1 class="title">现在你已获得{{ count }}元</h1>
+  <h1 class="title">现在你已获得{{ count.toFixed(2) }}元</h1>
   <button @click="onclick" class="main-button"><img src="/red-packet.png" alt="The picture for an red packet" /></button>
 </template>
 
