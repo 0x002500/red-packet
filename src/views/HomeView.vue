@@ -2,7 +2,16 @@
 
 </script>
 
-<script>
+<script lang="ts">
+//check the random type
+const isInteger = (obj: unknown) => {
+  return typeof obj === 'number' && obj % 1 === 0;
+};
+//change the type
+const keeptwo = (num: number) => {
+  return Number(num.toString().match(/^\d+(?:\.\d{0,2})?/));
+};
+
 export default {
   data() {
     return {
@@ -11,8 +20,8 @@ export default {
   },
   methods: {
     onclick() {
-      var now_num = (Math.random() * 2).toFixed(2);
-      this.count += now_num;
+      if (isInteger(Math.random()) == false) this.count += keeptwo(Math.random() + 1)
+      else this.count += Math.random();
     }
   }
 }
