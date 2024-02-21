@@ -2,11 +2,12 @@
 
 </script>
 
-<script>
+<script lang="ts">
 export default {
   data() {
     return {
-      count: 0
+      count: 0,
+      time: 15
     }
   },
   methods: {
@@ -19,7 +20,8 @@ export default {
 </script>
 
 <template>
-  <h1 class="title">现在你已获得{{ count.toFixed(2) }}元</h1>
+    <h1 class="title">现在你已获得{{ count.toFixed(2) }}元</h1>
+    <h2 class="downclock">剩余时间：{{ time }}</h2>
   <button @click="onclick" class="main-button"><img src="/red-packet.png" alt="The picture for an red packet" /></button>
 </template>
 
@@ -35,6 +37,11 @@ export default {
 .title {
   position: absolute;
   left: 50%;
+  transform: translate(-50%, 0);
+}
+.downclock {
+  position: absolute;
+  right: 5%;
   transform: translate(-50%, 0);
 }
 </style>
